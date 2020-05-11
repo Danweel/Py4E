@@ -14,22 +14,19 @@
 # (Use the file name mbox-short.txt as the file name)
 
 
-fname = raw_data("Enter file name: ")
+fname = input("Enter file name: ")
 fh = open(fname)
 
 count = 0
 
 for line in fh:
     if not line.startswith("X-DSPAM-Confidence:") : continue
-    print(line)
-print("Done")
 
-for line in fh:
-    if line.startswith("X-DSPAM-Confidence:") :
-        numex = (fh[":"])
+    else:
+        numex = line[":":]
         value = float(numex)
-        count = count(numex) + 1
-        av = value/count
+        count += 1
+av = value/count
 print(av)
 
 print("Done")
