@@ -10,7 +10,6 @@
 #You can download the sample data at http://www.py4e.com/code3/mbox-short.txt
 #when you are testing below enter mbox-short.txt as the file name.
 #
-# Use words.txt as the file name
 # (Use the file name mbox-short.txt as the file name)
 
 
@@ -18,15 +17,18 @@ fname = input("Enter file name: ")
 fh = open(fname)
 
 count = 0
+fval = 0
 
 for line in fh:
     if not line.startswith("X-DSPAM-Confidence:") : continue
 
     else:
-        numex = line[":":]
-        value = float(numex)
-        count += 1
-av = value/count
-print(av)
+        line = line.strip()
 
-print("Done")
+        numex = line[19:]
+        fval += float(numex)
+
+        count += 1
+
+av = fval/count
+print("Average spam confidence:", av)
