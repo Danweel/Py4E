@@ -8,6 +8,18 @@
 
 fname = input("Enter file name: ")
 fh = open(fname)
+
 lst = list()
+
 for line in fh:
+    eline = line.split
+
+    if eline = list
+        break
+    else :
+
+        lst.append(eline)
+
+print(lst.sort())
+
 print(line.rstrip())
